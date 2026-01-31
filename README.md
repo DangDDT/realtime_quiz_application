@@ -1,5 +1,40 @@
 # Real-Time Vocabulary Quiz - System Design Document
 
+![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=3ECF8E)
+![Postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=apple&logoColor=white)
+[![Google Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)](https://deepmind.google/technologies/gemini/)
+![Cursor](https://img.shields.io/badge/Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)
+![Design Stitch](https://img.shields.io/badge/Design_Stitch-4285F4?style=for-the-badge&logo=google&logoColor=white)
+[![dbdiagram](https://img.shields.io/badge/dbdiagram-E25D33?style=for-the-badge&logo=postgresql&logoColor=white)](https://dbdiagram.io/)
+
+## Table of Contents
+
+1. [Overview](#1-overview)
+2. [Architecture Diagram](#2-architecture-diagram)
+3. [Component Description](#3-component-description)
+    * [Client Side (Flutter Application)](#a-client-side-flutter-application)
+    * [Backend Side (Supabase BaaS)](#b-backend-side-supabase-baas)
+4. [Data Flow](#4-data-flow)
+    * [Real-time Scoring & Leaderboard Update](#scenario-real-time-scoring--leaderboard-update)
+5. [Technology Stack & Justification](#5-technology-stack--justification)
+    * [Core Technology Stack](#a-core-technology-stack)
+    * [AI & Development Tools](#b-ai--development-tools)
+6. [Scalability & Performance Strategy](#6-scalability--performance-strategy)
+7. [AI Collaboration & Verification Process](#7-ai-collaboration--verification-process-mandatory)
+    * [Concepts & Data Modeling](#phase-1-conceptualization--data-modeling)
+    * [Tech Stack Selection](#phase-2-tech-stack-selection)
+    * [Architectural Optimization](#phase-3-architectural-optimization-crucial)
+    * [UI/UX Prototyping](#phase-4-uiux-prototyping)
+    * [Infrastructure Implementation](#phase-5-infrastructure-implementation)
+    * [Data Seeding](#phase-6-data-seeding)
+    * [Codebase Architecture](#phase-7-codebase-architecture--standards)
+    * [Feature Implementation](#phase-8-feature-implementation--verification)
+8. [Project Images](#8-project-images)
+
 ## 1. Overview
 
 This document outlines the technical architecture for the Real-Time Vocabulary Quiz application. The solution leverages a **Serverless Architecture** using **Supabase** as the Backend-as-a-Service (BaaS) to ensure rapid development, high scalability, and seamless real-time capabilities. The client application is built with **Flutter** for a high-performance, cross-platform user experience.
@@ -308,10 +343,12 @@ VALUES
 
 ## 8. Project Images
 
-![Entry Screen](docs/entry_screen.png)
+| Entry & Join | Lobby (Waiting Room) |
+| :---: | :---: |
+| ![Entry Screen](docs/entry_screen.png) | ![Lobby Screen](docs/lobby_screen.png) |
+| **Players enter PIN code to join** | **waiting for host to start** |
 
-![Lobby Screen](docs/lobby_screen.png)
-
-![Arena Screen](docs/arena_screen.png)
-
-![Leaderboard Screen](docs/leaderboard_screen.png)
+| Arena (Game Loop) | Leaderboard (Real-time) |
+| :---: | :---: |
+| ![Arena Screen](docs/arena_screen.png) | ![Leaderboard Screen](docs/leaderboard_screen.png) |
+| **Real-time question & answering** | **Live ranking updates via WebSocket** |
